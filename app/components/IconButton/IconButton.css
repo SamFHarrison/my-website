@@ -1,0 +1,14 @@
+button.icon-button {
+  background-color: var(--background-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 64px;
+  border-radius: 32px;
+
+  svg {
+    fill: white;
+  }
+}
