@@ -1,0 +1,14 @@
+section {
+  div.island {
+    background-color: var(--background-black);
+
+    display: flex;
+    gap: 14px;
+    border-radius: 46px;
+    padding: 14px;
+
+    img {
+      border-radius: 32px;
+    }
+  }
+}
