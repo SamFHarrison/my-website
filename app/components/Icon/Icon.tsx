@@ -1,17 +1,19 @@
 import Add from "./Add";
+import Ellipsis from "./Ellipsis";
 
-type IconNames = "add";
+export type IconNames = "add" | "ellipsis";
 
 export interface IconProps {
   size?: number;
-  id?: IconNames;
+  name?: IconNames;
 }
 
-export default function Icon({ id, size = 24 }: IconProps) {
-  switch (id) {
+export default function Icon({ name, size = 24 }: IconProps) {
+  switch (name) {
     case "add":
       return <Add size={size} />;
-
+    case "ellipsis":
+      return <Ellipsis size={size} />;
     default:
       break;
   }

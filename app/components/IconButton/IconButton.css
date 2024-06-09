@@ -1,5 +1,5 @@
-button.icon-button {
-  background-color: var(--background-primary);
+button.icon-button,
+a.icon-button {
   border: none;
   display: flex;
   align-items: center;

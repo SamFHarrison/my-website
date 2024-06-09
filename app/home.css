@@ -1,0 +1,7 @@
+img {
+  border-radius: 32px;
+}
+
+.icon-button {
+  background-color: var(--background-success);
+}

@@ -1,14 +1,12 @@
 import Image from "next/image";
 import "./Island.css";
 import IconButton from "../IconButton/IconButton";
+import { PropsWithChildren } from "react";
 
-export default function Island() {
+export default function Island({ children }: PropsWithChildren) {
   return (
     <section>
-      <div className="island">
-        <Image alt="avatar" src="/assets/avatar.jpg" width={64} height={64} />
-        <IconButton />
-      </div>
+      <div className="island">{children}</div>
     </section>
   );
 }
