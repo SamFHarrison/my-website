@@ -5,10 +5,12 @@ import IconButton from "./components/IconButton/IconButton";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./home.css";
+import Icon from "./components/Icon/Icon";
 
 enum PageState {
   LANDING = "landing",
   WELCOME = "welcome",
+  LINKS = "links",
 }
 
 export default function Home() {
@@ -24,6 +26,11 @@ export default function Home() {
             key="island"
             className="island"
             initial={{ borderRadius: "46px" }}
+            exit={{
+              opacity: 0,
+              filter: "blur(5px)",
+              transition: { duration: 0.15 },
+            }}
           >
             <motion.button
               className="avatar"
@@ -34,12 +41,7 @@ export default function Home() {
                 }
               }}
             >
-              <Image
-                alt="avatar"
-                src="/assets/avatar.jpg"
-                width={64}
-                height={64}
-              />
+              <Image alt="avatar" src="/assets/avatar.jpg" priority fill />
             </motion.button>
 
             <AnimatePresence mode="popLayout">
@@ -73,11 +75,31 @@ export default function Home() {
             {pageState === PageState.WELCOME && (
               <IconButton
                 icon="ellipsis"
-                onClick={() => {}}
+                onClick={() => setPageState(PageState.LINKS)}
                 key="button"
                 layoutId="button"
               />
             )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence mode="popLayout">
+        {pageState === PageState.LINKS && (
+          <motion.div
+            layoutId="island"
+            key="island"
+            className="island island-small"
+            initial={{ borderRadius: "46px" }}
+            exit={{
+              opacity: 0,
+              filter: "blur(5px)",
+              transition: { duration: 0.15 },
+            }}
+          >
+            <motion.button layout className="back-button">
+              <Icon name="left-arrow" />
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>

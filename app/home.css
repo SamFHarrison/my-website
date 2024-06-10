@@ -21,11 +21,14 @@ h1.level-3 {
 
 div.island {
   background-color: var(--background-black);
-
   display: flex;
   gap: 14px;
   padding: 14px;
   position: relative;
+
+  &.island-small {
+    padding: 8px;
+  }
 }
 
 button {
@@ -34,8 +37,35 @@ button {
   border-radius: 32px;
   overflow: hidden;
   border: none;
+  outline: 1px solid var(--background-black);
+  position: relative;
 }
 
 .icon-button {
   background-color: var(--background-primary);
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-black);
+  gap: 8px;
+  height: max-content;
+  width: max-content;
+
+  transition: all ease-in-out 150ms;
+
+  svg {
+    fill: var(--background-white);
+  }
+
+  &:hover {
+    background-color: var(--background-dark-grey);
+    padding: 6px 12px 6px 6px;
+
+    &::after {
+      content: "Back";
+    }
+  }
 }
