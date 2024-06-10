@@ -19,8 +19,14 @@ export default function Home() {
     <main>
       <AnimatePresence>
         {/* {pageState === PageState.LANDING && ( */}
-        <motion.div layout className="island">
+        <motion.div
+          layout
+          key="island"
+          className="island"
+          initial={{ borderRadius: "46px" }}
+        >
           <motion.img
+            layout
             alt="avatar"
             src="/assets/avatar.jpg"
             width={64}
@@ -30,9 +36,10 @@ export default function Home() {
 
           {pageState === PageState.WELCOME && (
             <motion.h1
+              layout
               className="level-3"
-              onClick={() => setPageState(PageState.LANDING)}
               key="title"
+              onClick={() => setPageState(PageState.LANDING)}
               initial={{ opacity: 0, filter: "blur(10px)" }}
               animate={{ opacity: 1, filter: "blur(0)" }}
               exit={{ opacity: 0, filter: "blur(10px)" }}

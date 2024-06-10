@@ -3,6 +3,6 @@ div.island {
 
   display: flex;
   gap: 14px;
-  border-radius: 46px;
   padding: 14px;
+  position: relative;
 }
