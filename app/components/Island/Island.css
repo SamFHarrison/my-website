@@ -5,4 +5,8 @@ div.island {
   gap: 14px;
   padding: 14px;
   position: relative;
+
+  .avatar {
+    cursor: pointer;
+  }
 }

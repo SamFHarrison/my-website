@@ -20,27 +20,32 @@ export default function Home() {
       <AnimatePresence>
         {/* {pageState === PageState.LANDING && ( */}
         <motion.div
-          layout
+          layoutId="island"
           key="island"
           className="island"
           initial={{ borderRadius: "46px" }}
         >
           <motion.img
-            layout
+            layoutId="avatar"
+            className="avatar"
             alt="avatar"
             src="/assets/avatar.jpg"
             width={64}
             height={64}
-            layoutId="avatar"
+            onClick={() => {
+              if (pageState !== PageState.LANDING) {
+                setPageState(PageState.LANDING);
+              }
+            }}
           />
 
           {pageState === PageState.WELCOME && (
             <motion.h1
-              layout
-              className="level-3"
               key="title"
-              onClick={() => setPageState(PageState.LANDING)}
+              layoutId="title"
+              className="level-3"
               initial={{ opacity: 0, filter: "blur(10px)" }}
+              transition={{ delay: 0.15 }}
               animate={{ opacity: 1, filter: "blur(0)" }}
               exit={{ opacity: 0, filter: "blur(10px)" }}
             >
