@@ -5,7 +5,6 @@ import IconButton from "./components/IconButton/IconButton";
 import { useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import "./home.css";
-import "./welcome/welcome.css";
 import "./components/Island/Island.css";
 
 enum PageState {
