@@ -1,17 +1,20 @@
 import { ButtonHTMLAttributes } from "react";
 import Icon, { IconNames } from "../Icon/Icon";
 import Link from "next/link";
-import "./IconButton.css";
 import clsx from "clsx";
+import { motion } from "framer-motion";
+import "./IconButton.css";
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
   icon: IconNames;
+  layoutId?: string;
 }
 
 export default function IconButton({
   href,
   icon,
+  layoutId,
   className,
   onClick,
   ...props
@@ -26,8 +29,8 @@ export default function IconButton({
     );
   }
   return (
-    <button className={classes} onClick={onClick} {...props}>
+    <motion.button className={classes} onClick={onClick} layoutId={layoutId}>
       <Icon name={icon} size={32} />
-    </button>
+    </motion.button>
   );
 }

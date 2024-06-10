@@ -12,11 +12,12 @@
   margin: 0;
 }
 
-body {
+main {
+  margin: 0 auto;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 a {

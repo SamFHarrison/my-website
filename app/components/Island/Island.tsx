@@ -1,12 +1,11 @@
+"use client";
+
+import { LayoutGroup, motion } from "framer-motion";
 import Image from "next/image";
-import "./Island.css";
 import IconButton from "../IconButton/IconButton";
 import { PropsWithChildren } from "react";
+import "./Island.css";
 
 export default function Island({ children }: PropsWithChildren) {
-  return (
-    <section>
-      <div className="island">{children}</div>
-    </section>
-  );
+  return <section></section>;
 }

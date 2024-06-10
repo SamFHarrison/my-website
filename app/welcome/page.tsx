@@ -1,6 +1,6 @@
 import Image from "next/image";
-import IconButton from "../components/IconButton/IconButton";
 import Island from "../components/Island/Island";
+import IconButton from "../components/IconButton/IconButton";
 import "./welcome.css";
 
 export default function Welcome() {
