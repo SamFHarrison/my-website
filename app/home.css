@@ -1,11 +1,3 @@
-img {
-  border-radius: 9999px;
-}
-
-.icon-button {
-  background-color: var(--background-success);
-}
-
 h1.level-3 {
   font-size: 1rem;
   font-weight: 500;
@@ -24,5 +16,26 @@ h1.level-3 {
 }
 
 .more-actions {
+  background-color: var(--background-primary);
+}
+
+div.island {
+  background-color: var(--background-black);
+
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  position: relative;
+}
+
+button {
+  height: 64px;
+  width: 64px;
+  border-radius: 32px;
+  overflow: hidden;
+  border: none;
+}
+
+.icon-button {
   background-color: var(--background-primary);
 }

@@ -3,9 +3,8 @@
 import Image from "next/image";
 import IconButton from "./components/IconButton/IconButton";
 import { useState } from "react";
-import { AnimatePresence, MotionConfig, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import "./home.css";
-import "./components/Island/Island.css";
 
 enum PageState {
   LANDING = "landing",
@@ -18,90 +17,69 @@ export default function Home() {
   return (
     <main>
       <AnimatePresence>
-        {/* {pageState === PageState.LANDING && ( */}
-        <motion.div
-          layoutId="island"
-          key="island"
-          className="island"
-          initial={{ borderRadius: "46px" }}
-        >
-          <motion.img
-            layoutId="avatar"
-            className="avatar"
-            alt="avatar"
-            src="/assets/avatar.jpg"
-            width={64}
-            height={64}
-            onClick={() => {
-              if (pageState !== PageState.LANDING) {
-                setPageState(PageState.LANDING);
-              }
-            }}
-          />
-
-          {pageState === PageState.WELCOME && (
-            <motion.h1
-              key="title"
-              layoutId="title"
-              className="level-3"
-              initial={{ opacity: 0, filter: "blur(10px)" }}
-              transition={{ delay: 0.15 }}
-              animate={{ opacity: 1, filter: "blur(0)" }}
-              exit={{ opacity: 0, filter: "blur(10px)" }}
-            >
-              Hi, I&apos;m <span className="level-1">Sam F-Harrison</span>
-            </motion.h1>
-          )}
-
-          {pageState === PageState.LANDING && (
-            <IconButton
-              icon="add"
-              onClick={() => setPageState(PageState.WELCOME)}
-              key="button"
-              layoutId="button"
-            />
-          )}
-          {pageState === PageState.WELCOME && (
-            <IconButton
-              icon="ellipsis"
-              onClick={() => {}}
-              key="button"
-              layoutId="button"
-            />
-          )}
-        </motion.div>
-        {/* )} */}
-
-        {/* {pageState === PageState.WELCOME && (
+        {(pageState === PageState.LANDING ||
+          pageState === PageState.WELCOME) && (
           <motion.div
             layoutId="island"
+            key="island"
             className="island"
-            transition={{ type: "spring", bounce: 0.25 }}
+            initial={{ borderRadius: "46px" }}
           >
-            <motion.img
-              alt="avatar"
-              src="/assets/avatar.jpg"
-              width={64}
-              height={64}
+            <motion.button
+              className="avatar"
               layoutId="avatar"
-            />
-            <motion.h1
-              className="level-3"
-              onClick={() => setPageState(PageState.LANDING)}
-              key="title"
-              initial={{ opacity: 0, filter: "blur(10px)" }}
-              animate={{ opacity: 1, filter: "blur(0)" }}
-              exit={{ opacity: 0, filter: "blur(10px)", scale: 0 }}
+              onClick={() => {
+                if (pageState !== PageState.LANDING) {
+                  setPageState(PageState.LANDING);
+                }
+              }}
             >
-              Hi, I&apos;m <span className="level-1">Sam F-Harrison</span>
-            </motion.h1>
-            <IconButton
-              icon="ellipsis"
-              className="more-actions"
-              layoutId="button"
-            />
+              <Image
+                alt="avatar"
+                src="/assets/avatar.jpg"
+                width={64}
+                height={64}
+              />
+            </motion.button>
+
+            <AnimatePresence mode="popLayout">
+              {pageState === PageState.WELCOME && (
+                <motion.h1
+                  key="title"
+                  layoutId="title"
+                  className="level-3"
+                  initial={{ opacity: 0, filter: "blur(5px)" }}
+                  transition={{ delay: 0.15 }}
+                  animate={{ opacity: 1, filter: "blur(0)" }}
+                  exit={{
+                    opacity: 0,
+                    filter: "blur(5px)",
+                    transition: { duration: 0.15 },
+                  }}
+                >
+                  Hi, I&apos;m <span className="level-1">Sam F-Harrison</span>
+                </motion.h1>
+              )}
+            </AnimatePresence>
+
+            {pageState === PageState.LANDING && (
+              <IconButton
+                icon="add"
+                onClick={() => setPageState(PageState.WELCOME)}
+                key="button"
+                layoutId="button"
+              />
+            )}
+            {pageState === PageState.WELCOME && (
+              <IconButton
+                icon="ellipsis"
+                onClick={() => {}}
+                key="button"
+                layoutId="button"
+              />
+            )}
           </motion.div>
-        )} */}
+        )}
       </AnimatePresence>
     </main>
   );
