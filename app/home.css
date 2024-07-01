@@ -1,34 +1,39 @@
-h1.level-3 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--background-secondary);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  width: 180px;
-
-  span.level-1 {
-    font-size: 1.5rem;
-    color: var(--background-white);
-  }
-}
-
-.more-actions {
-  background-color: var(--background-primary);
-}
-
 div.island {
-  background-color: var(--background-black);
+  position: relative;
   display: flex;
+
+  height: max-content;
   gap: 14px;
   padding: 14px;
-  position: relative;
+
+  background-color: var(--background-black);
 
   &.island-small {
     padding: 8px;
   }
+
+  h1.level-3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--background-secondary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 180px;
+
+    span.level-1 {
+      font-size: 1.5rem;
+      color: var(--background-white);
+    }
+  }
+}
+
+.link-container {
+  height: 75px;
+  width: 100%;
+  z-index: -1;
 }
 
 button {
