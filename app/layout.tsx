@@ -9,6 +9,10 @@ const sfPro = SFPro({
 export const metadata: Metadata = {
   title: "Sam F-Harrison",
   description: "Carefully crafted by Sam F-Harrison",
+  metadataBase: new URL("https://localhost:3000"),
+  openGraph: {
+    images: "/opengraph-image.png",
+  },
 };
 
 export default function RootLayout({
