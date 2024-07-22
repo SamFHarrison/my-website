@@ -1,6 +1,10 @@
 :root {
+  --background-white: #ffffff;
   --background-black: #000000;
   --background-primary: #0a84ff;
+  --background-secondary: #757575;
+  --background-dark-grey: #404040;
+  --background-success: #30d158;
 }
 
 * {
@@ -9,22 +13,23 @@
   margin: 0;
 }
 
-body {
-  height: 100vh;
+main {
   display: flex;
+  justify-content: center;
+  padding-top: 20vh;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+button,
 a {
-  color: inherit;
-  text-decoration: none;
+  cursor: pointer;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-  }
-} */
 
 @media (prefers-color-scheme: dark) {
   html {

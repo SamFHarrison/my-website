@@ -1,0 +1,80 @@
+div.island {
+  position: relative;
+  display: flex;
+  z-index: 1;
+
+  height: max-content;
+  gap: 14px;
+  padding: 14px;
+
+  background-color: var(--background-black);
+
+  &.island-small {
+    padding: 8px;
+  }
+
+  h1.level-3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--background-secondary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 180px;
+
+    span.level-1 {
+      font-size: 1.5rem;
+      color: var(--background-white);
+    }
+  }
+}
+
+.link-container {
+  height: 75px;
+  width: 100%;
+  z-index: 0;
+
+  .links {
+    background-color: var(--background-black);
+    padding: 6px;
+    display: flex;
+  }
+}
+
+button {
+  height: 64px;
+  width: 64px;
+  border-radius: 32px;
+  overflow: hidden;
+  border: none;
+  outline: 1px solid var(--background-black);
+  position: relative;
+}
+
+.icon-button {
+  background-color: var(--background-primary);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-black);
+  gap: 8px;
+  height: 32px;
+  width: 32px;
+  padding: 4px;
+
+  transition: all ease-in-out 150ms;
+
+  svg {
+    fill: var(--background-white);
+  }
+
+  &:hover {
+    background-color: var(--background-dark-grey);
+    background-color: #222222;
+  }
+}
