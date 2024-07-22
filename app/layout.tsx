@@ -9,10 +9,9 @@ const sfPro = SFPro({
 export const metadata: Metadata = {
   title: "Sam F-Harrison",
   description: "Carefully crafted by Sam F-Harrison",
-  metadataBase: new URL("https://localhost:3000"),
-  openGraph: {
-    images: "/opengraph-image.png",
-  },
+  metadataBase: new URL(
+    "https://my-website-git-develop-sam-fharrisons-projects.vercel.app/"
+  ),
 };
 
 export default function RootLayout({
