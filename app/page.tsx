@@ -6,6 +6,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./home.css";
 import Icon from "./components/Icon/Icon";
+import { useRouter } from "next/navigation";
+import { Links } from "./globals";
 
 enum PageState {
   LANDING = "landing",
@@ -16,6 +18,8 @@ enum PageState {
 export default function Home() {
   const [pageState, setPageState] = useState(PageState.LANDING);
   const [isLinksOpen, setIsLinksOpen] = useState(false);
+
+  const router = useRouter();
 
   return (
     <main>
@@ -93,51 +97,45 @@ export default function Home() {
                 className="links"
                 initial={{
                   borderRadius: "46px",
-                  translateY: "-50px",
+                  translateY: "-75px",
                   opacity: 0,
-                  filter: "blur(5px)",
                 }}
                 animate={{
                   translateY: "0px",
                   opacity: 100,
-                  filter: "blur(0px)",
-                  transition: { type: "spring", duration: 2 },
+                  transition: { duration: 0.15 },
                 }}
                 exit={{
-                  translateY: "-50px",
-                  // opacity: 0,
-                  filter: "blur(5px)",
+                  translateY: "-75px",
                   transition: { duration: 0.15 },
                 }}
               >
-                <motion.button layout className="back-button">
-                  <Icon name="left-arrow" />
+                <motion.button
+                  layout
+                  className="button"
+                  onClick={() => router.push(Links.Linkedin)}
+                >
+                  <Icon name="linkedin" size={20} />
+                </motion.button>
+                <motion.button
+                  layout
+                  className="button"
+                  onClick={() => router.push(Links.X)}
+                >
+                  <Icon name="x-logo" size={20} />
+                </motion.button>
+                <motion.button
+                  layout
+                  className="button"
+                  onClick={() => router.push(Links.Github)}
+                >
+                  <Icon name="github" size={20} />
                 </motion.button>
               </motion.div>
             </div>
           )}
         </AnimatePresence>
       </div>
-
-      {/* <AnimatePresence mode="popLayout">
-        {pageState === PageState.LINKS && (
-          <motion.div
-            layoutId="island"
-            key="island"
-            className="island island-small"
-            initial={{ borderRadius: "46px" }}
-            exit={{
-              opacity: 0,
-              filter: "blur(5px)",
-              transition: { duration: 0.15 },
-            }}
-          >
-            <motion.button layout className="back-button">
-              <Icon name="left-arrow" />
-            </motion.button>
-          </motion.div>
-        )}
-      </AnimatePresence> */}
     </main>
   );
 }

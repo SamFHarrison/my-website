@@ -1,6 +1,7 @@
 div.island {
   position: relative;
   display: flex;
+  z-index: 1;
 
   height: max-content;
   gap: 14px;
@@ -33,7 +34,13 @@ div.island {
 .link-container {
   height: 75px;
   width: 100%;
-  z-index: -1;
+  z-index: 0;
+
+  .links {
+    background-color: var(--background-black);
+    padding: 6px;
+    display: flex;
+  }
 }
 
 button {
@@ -50,14 +57,15 @@ button {
   background-color: var(--background-primary);
 }
 
-.back-button {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--background-black);
   gap: 8px;
-  height: max-content;
-  width: max-content;
+  height: 32px;
+  width: 32px;
+  padding: 4px;
 
   transition: all ease-in-out 150ms;
 
@@ -67,10 +75,6 @@ button {
 
   &:hover {
     background-color: var(--background-dark-grey);
-    padding: 6px 12px 6px 6px;
-
-    &::after {
-      content: "Back";
-    }
+    background-color: #222222;
   }
 }
